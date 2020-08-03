@@ -1,4 +1,6 @@
 ---
+# This script is a Clouformation Template in YAML
+# Setups a simple web server on linux and post a message on webpage
 Parameters:
   SSHKey:
     Type: AWS::EC2::KeyPair::KeyName
@@ -14,7 +16,7 @@ Resources:
       KeyName: !Ref SSHKey
       SecurityGroups:
         - !Ref SSHSecurityGroup
-      # we install our web server with user data
+      # Install web server with user data
       UserData: 
         Fn::Base64: |
           #!/bin/bash -xe
@@ -24,7 +26,7 @@ Resources:
           systemctl enable httpd
           echo "Hello World from DevOps Administrator" > /var/www/html/index.html
 
-  # our EC2 security group
+  # EC2 security group for webserver
   SSHSecurityGroup:
     Type: AWS::EC2::SecurityGroup
     Properties:
