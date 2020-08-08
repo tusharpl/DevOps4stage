@@ -5,4 +5,4 @@ yum update -y
 yum install -y httpd
 systemctl start httpd
 systemctl enable httpd
-echo "Hello World from DevOps Administrator" > /var/www/html/index.html
+echo "Web Server running!" > /var/www/html/index.html
