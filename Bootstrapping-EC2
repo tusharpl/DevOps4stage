@@ -1,1 +1,8 @@
 # Simple script to boot strapp an EC2 instance with http server. For this example it is Apache httpd.
+#  bash with -e means to exit immediately if there is an error. -x is to eXpand each command and show what is happening so this is can be seen on a log.
+#!/bin/bash -xe
+yum update -y
+yum install -y httpd
+systemctl start httpd
+systemctl enable httpd
+echo "Hello World from DevOps Administrator" > /var/www/html/index.html
