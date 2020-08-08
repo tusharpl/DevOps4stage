@@ -1,0 +1,1 @@
+# Simple script to boot strapp an EC2 instance with http server. For this example it is Apache httpd.
